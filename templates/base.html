@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+
+<html>
+    <head>
+        <title>{% block title %}loose threds{% endblock %}</title>
+        <link rel="stylesheet" href="{% static 'css/gifs/main.css' %}">
+    </head>
+
+    <body>
+        {% block outside %}{% endblock %}
+
+        <header>
+            <h1>
+                <a href="/">loose threds</a>
+            </h1>
+
+            <nav>
+                <a href="/">home</a>
+                <!-- TODO: logged out -->
+                <a href="/login">login</a>
+
+                <!-- TODO: logged in -->
+                <a href="/users/">my threds</a>
+                <a href="/logout">logout</a>
+            </nav>
+
+            <div class="clear"></div>
+
+            <!-- != messages() -->
+        </header>
+
+        <section id="body">
+            {% block body %}{% endblock %}
+        </section>
+
+        <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.1.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/lib/ICanHaz.min.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/loosethreds.js' %}"></script>
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>

@@ -1,0 +1,322 @@
+@import url(http://fonts.googleapis.com/css?family=Gudea:400,700,400italic);
+/* line 5, ../../../../sass/reset.sass */
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* line 19, ../../../../sass/reset.sass */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 22, ../../../../sass/reset.sass */
+body {
+  line-height: 1;
+}
+
+/* line 25, ../../../../sass/reset.sass */
+ol, ul {
+  list-style: none;
+}
+
+/* line 28, ../../../../sass/reset.sass */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 31, ../../../../sass/reset.sass */
+blockquote:before, blockquote:after, q:before, q:after {
+  content: "";
+  content: none;
+}
+
+/* line 35, ../../../../sass/reset.sass */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 5, ../../../../sass/gifs/main.sass */
+.clear {
+  clear: both;
+}
+
+/* line 7, ../../../../sass/gifs/main.sass */
+.left {
+  float: left;
+}
+
+/* line 9, ../../../../sass/gifs/main.sass */
+.right {
+  float: right;
+}
+
+/* line 11, ../../../../sass/gifs/main.sass */
+.hidden {
+  display: none;
+}
+
+/* line 14, ../../../../sass/gifs/main.sass */
+body {
+  background-color: #333333;
+  font: 14px "Gudea", Helvetica, "serif";
+}
+
+/* line 17, ../../../../sass/gifs/main.sass */
+a {
+  color: #64991e;
+  display: block;
+}
+
+/* line 20, ../../../../sass/gifs/main.sass */
+h1 {
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* line 24, ../../../../sass/gifs/main.sass */
+h2 {
+  color: white;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+/* line 29, ../../../../sass/gifs/main.sass */
+button, input[type="submit"], input[type="button"] {
+  display: block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 2em 0.55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #e8f0de;
+  border: solid 1px #538312;
+  background: #64991e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+  background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+}
+/* line 49, ../../../../sass/gifs/main.sass */
+button:hover, input[type="submit"]:hover, input[type="button"]:hover {
+  background: #538018;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+  background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+}
+/* line 53, ../../../../sass/gifs/main.sass */
+button:active, input[type="submit"]:active, input[type="button"]:active {
+  color: #a9c08c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+  background: -moz-linear-gradient(top, #4e7d0e, #7db72f);
+  position: relative;
+  top: 1px;
+}
+/* line 59, ../../../../sass/gifs/main.sass */
+button.inline, input[type="submit"].inline, input[type="button"].inline {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* line 65, ../../../../sass/gifs/main.sass */
+header {
+  margin-left: 20px;
+  margin-bottom: 40px;
+}
+/* line 68, ../../../../sass/gifs/main.sass */
+header h1 {
+  font-size: 90px;
+  font-weight: bold;
+}
+/* line 71, ../../../../sass/gifs/main.sass */
+header h1 a, header h1 a:hover, header h1 a:active, header h1 a:visited {
+  color: white;
+  text-decoration: none;
+}
+/* line 74, ../../../../sass/gifs/main.sass */
+header nav {
+  font-size: 20px;
+}
+/* line 76, ../../../../sass/gifs/main.sass */
+header nav a {
+  display: block;
+  float: left;
+  margin-right: 168px;
+}
+
+/* line 82, ../../../../sass/gifs/main.sass */
+form {
+  display: block;
+  position: relative;
+  width: 600px;
+}
+/* line 86, ../../../../sass/gifs/main.sass */
+form input {
+  font-size: 20px;
+}
+/* line 88, ../../../../sass/gifs/main.sass */
+form input[type="text"], form input[type="password"], form input[type="file"] {
+  height: 35px;
+  margin-bottom: 10px;
+  padding-left: 15px;
+  width: 400px;
+}
+/* line 93, ../../../../sass/gifs/main.sass */
+form input[type="submit"], form input[type="button"] {
+  display: block;
+  outline: none;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  font: 14px/100% Arial, Helvetica, sans-serif;
+  padding: 0.5em 2em 0.55em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 0.5em;
+  -moz-border-radius: 0.5em;
+  border-radius: 0.5em;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  color: #e8f0de;
+  border: solid 1px #538312;
+  background: #64991e;
+  background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e));
+  background: -moz-linear-gradient(top, #7db72f, #4e7d0e);
+}
+/* line 113, ../../../../sass/gifs/main.sass */
+form input[type="submit"]:hover, form input[type="button"]:hover {
+  background: #538018;
+  background: -webkit-gradient(linear, left top, left bottom, from(#6b9d28), to(#436b0c));
+  background: -moz-linear-gradient(top, #6b9d28, #436b0c);
+}
+/* line 117, ../../../../sass/gifs/main.sass */
+form input[type="submit"]:active, form input[type="button"]:active {
+  color: #a9c08c;
+  background: -webkit-gradient(linear, left top, left bottom, from(#4e7d0e), to(#7db72f));
+  background: -moz-linear-gradient(top, #4e7d0e, #7db72f);
+  position: relative;
+  top: 1px;
+}
+/* line 123, ../../../../sass/gifs/main.sass */
+form input[type="submit"].inline, form input[type="button"].inline {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+/* line 127, ../../../../sass/gifs/main.sass */
+section#body {
+  margin-left: 20px;
+}
+/* line 129, ../../../../sass/gifs/main.sass */
+section#body h1 {
+  margin-bottom: 20px;
+}
+/* line 131, ../../../../sass/gifs/main.sass */
+section#body h2 {
+  margin-bottom: 10px;
+}
+
+/* line 135, ../../../../sass/gifs/main.sass */
+section#body .box {
+  float: left;
+  height: 400px;
+  margin-right: 10px;
+  position: relative;
+  width: 300px;
+}
+/* line 141, ../../../../sass/gifs/main.sass */
+section#body .box h2, section#body .box a {
+  text-align: center;
+  width: 300px;
+}
+/* line 144, ../../../../sass/gifs/main.sass */
+section#body .box img {
+  border: none;
+  max-height: 360px;
+  max-width: 300px;
+}
+/* line 150, ../../../../sass/gifs/main.sass */
+section#body #user_images li.box .buttons {
+  margin-top: 10px;
+  text-align: center;
+  width: 300px;
+}
+/* line 154, ../../../../sass/gifs/main.sass */
+section#body #user_images li.box .buttons form {
+  display: inline;
+}
+/* line 156, ../../../../sass/gifs/main.sass */
+section#body #user_images li.box .buttons form button, section#body #user_images li.box .buttons form input[type="button"], section#body #user_images li.box .buttons form input[type="submit"] {
+  display: inline-block;
+}
+/* line 158, ../../../../sass/gifs/main.sass */
+section#body #user_images li.box .url {
+  display: none;
+}
+/* line 161, ../../../../sass/gifs/main.sass */
+section#body #user_images li.box .url form input[type="text"] {
+  height: 34px;
+  width: 280px;
+}
+
+/* line 166, ../../../../sass/gifs/main.sass */
+section#body article.image {
+  margin: auto auto 20px auto;
+  width: 50%;
+}
+/* line 169, ../../../../sass/gifs/main.sass */
+section#body article.image img {
+  width: 100%;
+}
+/* line 171, ../../../../sass/gifs/main.sass */
+section#body article.image .buttons {
+  margin-top: 20px;
+  text-align: center;
+}
+/* line 174, ../../../../sass/gifs/main.sass */
+section#body article.image .buttons form {
+  display: inline;
+}
+
+/* line 177, ../../../../sass/gifs/main.sass */
+aside#overlay {
+  background-color: black;
+  float: left;
+  height: 100%;
+  left: 0;
+  opacity: 0.75;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* line 187, ../../../../sass/gifs/main.sass */
+aside#modal {
+  background-color: #333333;
+  border: 1px solid #64991e;
+  float: left;
+  height: 50px;
+  left: 50%;
+  margin: -25px 0 0 -250px;
+  position: absolute;
+  width: 500px;
+  top: 50%;
+  z-index: 1002;
+}
