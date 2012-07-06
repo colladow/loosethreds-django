@@ -18,12 +18,12 @@
 
             <nav>
                 <a href="/">home</a>
-                <!-- TODO: logged out -->
+                {% if not user %}
                 <a href="/login">login</a>
-
-                <!-- TODO: logged in -->
-                <a href="/users/">my threds</a>
+                {% else %}
+                <a href="/users/{{ user.pk }}">my threds</a>
                 <a href="/logout">logout</a>
+                {% endif %}
             </nav>
 
             <div class="clear"></div>
@@ -32,7 +32,7 @@
         </header>
 
         <section id="body">
-            {% block body %}{% endblock %}
+        {% block body %}{% endblock %}
         </section>
 
         <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.1.min.js' %}"></script>

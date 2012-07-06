@@ -3,7 +3,7 @@
 {% load staticfiles %}
 
 {% block body %}
-<h1>{{ user.username }}</h1>
+<h1>{{ this_user.username }}</h1>
 
 <ul id="user_images">
     {% for image in images %}
@@ -14,7 +14,7 @@
         <div class="buttons">
             <button class="inline">Copy</button>
             {% if is_owner %}
-            <form method="post" action="/users/{{ user.pk }}/images/{{ image.pk }}">
+            <form method="post" action="/users/{{ this_user.pk }}/images/{{ image.pk }}">
                 <input type="hidden" name="method" value="_post">
                 <input type="submit" name="submit" value="Delete">
             </form>

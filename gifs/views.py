@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render_to_response
 from django.http import Http404
+from django.template import RequestContext
 
 def index(request):
     users = User.objects.all()
@@ -12,7 +13,9 @@ def index(request):
             'image': user.gifs.latest_gif(),
         }
 
-    return render_to_response('gifs/index.html', { 'users': user_data })
+    return render_to_response('gifs/index.html',
+                              { 'users': user_data },
+                              context_instance=RequestContext(request))
 
 def user(request, user_id):
     try:
@@ -25,7 +28,7 @@ def user(request, user_id):
     is_owner = request.user.is_authenticated() and user == request.user
 
     return render_to_response('gifs/user.html', {
-        'user': user,
+        'this_user': user,
         'images': images,
         'is_owner': is_owner,
-    })
+    }, context_instance=RequestContext(request))
