@@ -1,4 +1,4 @@
-{% if user %}
+{% if user.is_authenticated %}
 <h2>Upload File</h2>
 <form method="post" action="/users/{{ user.pk }}/images/" enctype="multipart/form-data">
     {% csrf_token %}

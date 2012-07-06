@@ -18,7 +18,7 @@
 
             <nav>
                 <a href="/">home</a>
-                {% if not user %}
+                {% if not user.is_authenticated %}
                 <a href="/login">login</a>
                 {% else %}
                 <a href="/users/{{ user.pk }}">my threds</a>
