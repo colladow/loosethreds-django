@@ -10,9 +10,21 @@ def upload_to(instance, filename):
 
     return now.strftime(path)
 
+class GifManager(models.Manager):
+    use_for_related_fields = True
+
+    def latest_gif(self):
+        qs = super(GifManager, self).get_query_set()
+
+        try:
+            return qs.order_by('-created').get()
+        except Gif.DoesNotExist:
+            return None
+
 class Gif(models.Model):
     user = models.ForeignKey(User, related_name='gifs')
     image = models.ImageField(upload_to=upload_to)
+    objects = GifManager()
 
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now_add=True, auto_now=True)

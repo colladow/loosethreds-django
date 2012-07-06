@@ -1,5 +1,15 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
 {% block body %}
-    <h1>Sup?</h1>
+    {% for pk, user in users.iteritems %}
+        <article class="user box">
+            <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
+
+            <a href="/users/{{ pk }}/images/{{ user.image.pk }}">
+                <img src="{% static user.image.image.url %}">
+            </a>
+        </article>
+    {% endfor %}
 {% endblock %}
