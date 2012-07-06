@@ -5,6 +5,7 @@ from django.http import Http404, HttpResponseForbidden
 from django.template import RequestContext
 
 from gifs.models import Gif
+from lib import download_gif
 
 def index(request):
     users = User.objects.all()
@@ -33,7 +34,7 @@ def user(request, user_id):
         'is_owner': is_owner,
     }, context_instance=RequestContext(request))
 
-@login_required(login_url='/login/')
+@login_required
 def delete(request, user_id, image_id):
     user = get_object_or_404(User, pk=user_id)
 
@@ -56,9 +57,24 @@ def delete(request, user_id, image_id):
 
     return redirect('/users/' + user_id)
 
-@login_required(login_url='/login')
+@login_required
 def create(request, user_id):
     user = get_object_or_404(User, pk=user_id)
 
     if user != request.user:
-        return HttpResponseForbidden('This is not your image.')
+        return HttpResponseForbidden('This is not you.')
+
+    if request.method != 'POST':
+        return HttpResponseForbidden('Bad method.')
+
+    if request.FILES.has_key('image'):
+        uploaded = request.FILES['image']
+
+        name, gif_file = uploaded.name, uploaded
+    else:
+        name, gif_file = download_gif(request.POST['url'])
+
+    gif = user.gifs.create()
+    gif.image.save(name, gif_file)
+
+    return redirect('/users/' + user_id)
