@@ -17,6 +17,7 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
+    url(r'^users/(?P<user_id>\d+)/$', 'gifs.views.user'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

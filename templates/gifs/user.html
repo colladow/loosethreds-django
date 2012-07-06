@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block body %}
+<h1>{{ user.username }}</h1>
+
+<ul id="user_images">
+    {% for image in images %}
+    <li class="box">
+        <a href="{% static image.image.url %}">
+            <img src="{% static image.image.url %}">
+        </a>
+        <div class="buttons">
+            <button class="inline">Copy</button>
+            {% if is_owner %}
+            <form method="post" action="/users/{{ user.pk }}/images/{{ image.pk }}">
+                <input type="hidden" name="method" value="_post">
+                <input type="submit" name="submit" value="Delete">
+            </form>
+            {% endif %}
+        </div>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
