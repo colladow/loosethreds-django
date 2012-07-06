@@ -14,8 +14,9 @@
         <div class="buttons">
             <button class="inline">Copy</button>
             {% if is_owner %}
-            <form method="post" action="/users/{{ this_user.pk }}/images/{{ image.pk }}">
-                <input type="hidden" name="method" value="_post">
+            <form method="post" action="/users/{{ this_user.pk }}/images/{{ image.pk }}/">
+                {% csrf_token %}
+                <input type="hidden" name="_method" value="delete">
                 <input type="submit" name="submit" value="Delete">
             </form>
             {% endif %}

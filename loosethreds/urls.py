@@ -17,7 +17,11 @@ urlpatterns = patterns('',
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
 
-    url(r'^users/(?P<user_id>\d+)/$', 'gifs.views.user'),
+    url(r'^users/(?P<user_id>\d+)$', 'gifs.views.user'),
+    #url(r'^users/(?P<user_id>\d+)/images/$', 'gifs.views.user'),
+    url(r'^users/(?P<user_id>\d+)/images/(?P<image_id>\d+)/$', 'gifs.views.delete'),
+
+    url(r'login/$', 'django.contrib.auth.views.login'),
 )
 
 urlpatterns += staticfiles_urlpatterns()

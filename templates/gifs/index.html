@@ -4,12 +4,12 @@
 
 {% block body %}
     {% for pk, user in users.iteritems %}
-        <article class="user box">
-            <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
+    <article class="user box">
+        <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
 
-            <a href="{% static user.image.image.url %}">
-                <img src="{% static user.image.image.url %}">
-            </a>
-        </article>
+        <a href="{% static user.image.image.url %}">
+            <img src="{% static user.image.image.url %}">
+        </a>
+    </article>
     {% endfor %}
 {% endblock %}

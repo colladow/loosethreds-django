@@ -17,8 +17,8 @@ class GifManager(models.Manager):
         qs = super(GifManager, self).get_query_set()
 
         try:
-            return qs.order_by('-created').get()
-        except Gif.DoesNotExist:
+            return qs.order_by('-created').all()[0]
+        except IndexError:
             return None
 
 class Gif(models.Model):
