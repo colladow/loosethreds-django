@@ -1,0 +1,7 @@
+body section#body ul#user_images li div.btn-toolbar{
+  text-align: center;
+}
+body section#body ul#user_images li div.btn-group form{
+  float: left;
+  margin: 0;
+}

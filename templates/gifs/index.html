@@ -3,16 +3,19 @@
 {% load staticfiles %}
 
 {% block body %}
+<article class="user">
+  <div class="row">
     {% for pk, user in users.iteritems %}
-    <article class="user box">
-        <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
+    <div class="span4">
+      <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
 
-        <a href="{% static user.image.image.url %}">
-            <img src="{% static user.image.image.url %}">
-        </a>
-    </article>
+      <a href="{% static user.image.image.url %}">
+        <img src="{% static user.image.image.url %}">
+      </a>
+    </div>
     {% endfor %}
-    <div class="clear"></div>
+  </div>
+</article>
 
-    {% include 'gifs/upload_form.html' %}
+{% include 'gifs/upload_form.html' %}
 {% endblock %}

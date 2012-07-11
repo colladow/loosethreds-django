@@ -3,41 +3,51 @@
 {% load staticfiles %}
 
 <html>
-    <head>
-        <title>{% block title %}loose threds{% endblock %}</title>
-        <link rel="stylesheet" href="{% static 'css/gifs/main.css' %}">
-    </head>
+  <head>
+    <title>{% block title %}loose threds{% endblock %}</title>
+    <link href="http://fonts.googleapis.com/css?family=Gudea:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    {% block stylesheets %}{% endblock %}
+  </head>
 
-    <body>
-        {% block outside %}{% endblock %}
+  <body>
+    {% block outside %}{% endblock %}
 
-        <header>
-            <h1>
-                <a href="/">loose threds</a>
-            </h1>
-
-            <nav>
-                <a href="/">home</a>
+    <header>
+      <nav>
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="container">
+              <a class="brand" href="/">
+                loose threds
+              </a>
+              <ul class="nav">
+                <li><a href="/">home</a></li>
                 {% if not user.is_authenticated %}
-                <a href="/login">login</a>
+                <li><a href="/login">login</a></li>
                 {% else %}
-                <a href="/users/{{ user.pk }}">my threds</a>
-                <a href="/logout">logout</a>
+                <li><a href="/users/{{ user.pk }}">my threds</a></li>
+                <li><a href="/logout">logout</a></li>
                 {% endif %}
-            </nav>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </nav>
 
-            <div class="clear"></div>
+      <div class="clear"></div>
 
-            <!-- != messages() -->
-        </header>
+      <!-- != messages() -->
+    </header>
 
-        <section id="body">
+    <div class="container-fluid">
+      <section id="body">
         {% block body %}{% endblock %}
-        </section>
+      </section>
+    </div>
 
-        <script type="text/javascript" src="{% static 'js/lib/jquery-1.7.1.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/lib/ICanHaz.min.js' %}"></script>
-        <script type="text/javascript" src="{% static 'js/loosethreds.js' %}"></script>
-        {% block javascripts %}{% endblock %}
-    </body>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    {% block javascripts %}{% endblock %}
+  </body>
 </html>
