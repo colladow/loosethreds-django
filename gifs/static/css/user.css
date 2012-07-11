@@ -1,3 +1,6 @@
+body section#body h1.user{
+  margin-bottom: 20px
+}
 body section#body ul#user_images li div.btn-toolbar{
   text-align: center;
 }

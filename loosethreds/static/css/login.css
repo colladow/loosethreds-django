@@ -1,0 +1,7 @@
+body h1.login{
+  margin-bottom: 20px;
+}
+
+body section#body form.login-form input, form.login-form button{
+  display: block;
+}

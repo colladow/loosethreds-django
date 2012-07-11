@@ -1,21 +1,28 @@
 {% extends 'base.html' %}
 
+{% load staticfiles %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/login.css' %}">
+{% endblock %}
+
 {% block body %}
+<h1 class="login">Login</h1>
 
-{% if form.errors %}
-<p>Your username and password didn't match. Please try again.</p>
-{% endif %}
+<form method="post" action="{% url django.contrib.auth.views.login %}" class="login-form">
+  {% if form.errors %}
+  <p>
+    <span class="label label-important">Error</span>
+    Your username and password didn't match. Please try again.
+  </p>
+  {% endif %}
 
-<h1>Login</h1>
+  {% csrf_token %}
 
-<form method="post" action="{% url django.contrib.auth.views.login %}">
-    {% csrf_token %}
-
-    <input type="text" name="username" placeholder="Username" autofocus>
-    <input type="password" name="password" placeholder="Password">
-
-    <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
+  <input type="text" name="username" placeholder="Username" autofocus class="input-xlarge">
+  <input type="password" name="password" placeholder="Password" class="input-xlarge">
+  <button type="submit" class="btn btn-primary">Login</button>
+  <input type="hidden" name="next" value="{{ next }}">
 </form>
 
 {% endblock %}

@@ -2,6 +2,10 @@
 
 {% load staticfiles %}
 
+{% block stylesheets %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock %}
+
 {% block body %}
 <article class="user">
   <div class="row">
