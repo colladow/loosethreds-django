@@ -7,6 +7,7 @@
     <title>{% block title %}loose threds{% endblock %}</title>
     <link href="http://fonts.googleapis.com/css?family=Gudea:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
     {% block stylesheets %}{% endblock %}
 
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
@@ -39,8 +40,6 @@
         </div>
       </nav>
 
-      <div class="clear"></div>
-
       <!-- != messages() -->
     </header>
 
@@ -49,6 +48,12 @@
         {% block body %}{% endblock %}
       </section>
     </div>
+
+    <footer>
+      <div class="container-fluid pony-power">
+        <a href="http://djangopony.com/" class="ponybadge" title="Magic! Ponies! Django! Whee!"><img src="http://media.djangopony.com/img/small/badge.png" width="210" height="65" alt="pony powered"></a>
+      </div>
+    </footer>
 
     {% block javascripts %}{% endblock %}
   </body>

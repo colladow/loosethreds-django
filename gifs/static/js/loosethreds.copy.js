@@ -19,8 +19,8 @@
           return input.focus().select();
         });
         return base.delegate('input.image-url', 'blur', function(event) {
-          var button, input;
-          input = $(this);
+          var button, jnput;
+          jnput = $(this);
           button = $('<button class="btn copy">Copy</button>');
           button.attr('data-url', input.data('url'));
           return input.replaceWith(button.clone());

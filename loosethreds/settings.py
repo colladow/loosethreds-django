@@ -176,27 +176,6 @@ PIPELINE_COMPILERS = (
     'pipeline.compilers.coffee.CoffeeScriptCompiler',
 )
 
-PIPELINE_CSS = {
-    'bootstrap': {
-        'source_filenames': {
-            'css/bootstrap.css',
-        },
-        'output_filename': 'css/bootstrap.css',
-    },
-    'index': {
-        'source_filenames': {
-            'css/index.css',
-        },
-        'output_filename': 'css/index.css',
-    },
-    'user': {
-        'source_filenames': {
-            'css/user.css',
-        },
-        'output_filename': 'css/user.css',
-    },
-}
-
 PIPELINE_JS = {
     'main': {
         'source_filenames': {
