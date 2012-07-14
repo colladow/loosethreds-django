@@ -1,10 +1,23 @@
 body section#body h1.user{
   margin-bottom: 20px
 }
-body section#body ul#user_images li div.btn-toolbar{
+body section#body ul#user_images li{
   text-align: center;
 }
-body section#body ul#user_images li div.btn-group form{
-  float: left;
-  margin: 0;
+body section#body ul#user_images li div.buttons{
+  padding-top: 10px;
+}
+body section#body ul#user_images li div.buttons button.copy{
+  display: inline-block;
+}
+body section#body ul#user_images li div.buttons form{
+  display: inline-block;
+  margin: 0 0 0 6px;
+}
+body section#body ul#user_images li div.buttons form button.delete{
+  margin-top: -8px;
+}
+body section#body ul#user_images li div.buttons input.image-url{
+  display: inline-block;
+  margin-top: 8px;
 }

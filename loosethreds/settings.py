@@ -84,6 +84,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+STATICFILES_STORAGE = 'pipeline.storage.PipelineStorage'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = 'r#1f&amp;8ns)l6=7k5tg*fx=c^^)c*e)98cl#_qop@fx6leo@rwxw'
 
@@ -131,6 +133,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'pipeline',
     'gifs',
 )
 
@@ -160,6 +163,58 @@ LOGGING = {
             'level': 'ERROR',
             'propagate': True,
         },
+    }
+}
+
+# NOTE: not compressing for now, will install yui later, more interested in coffee compile
+PIPELINE_CSS_COMPRESSOR = None
+PIPELINE_JS_COMPRESSOR = None
+PIPELINE_STORAGE = 'pipeline.storage.PipelineFinderStorage'
+PIPELINE_DISABLE_WRAPPER = True
+
+PIPELINE_COMPILERS = (
+    'pipeline.compilers.coffee.CoffeeScriptCompiler',
+)
+
+PIPELINE_CSS = {
+    'bootstrap': {
+        'source_filenames': {
+            'css/bootstrap.css',
+        },
+        'output_filename': 'css/bootstrap.css',
+    },
+    'index': {
+        'source_filenames': {
+            'css/index.css',
+        },
+        'output_filename': 'css/index.css',
+    },
+    'user': {
+        'source_filenames': {
+            'css/user.css',
+        },
+        'output_filename': 'css/user.css',
+    },
+}
+
+PIPELINE_JS = {
+    'main': {
+        'source_filenames': {
+            'js/bootstrap.js',
+        },
+        'output_filename': 'js/bootstrap.js',
+    },
+    'loosethreds': {
+        'source_filenames': {
+            'js/loosethreds.coffee',
+        },
+        'output_filename': 'js/loosethreds.js',
+    },
+    'utils': {
+        'source_filenames': {
+            'js/loosethreds.copy.coffee',
+        },
+        'output_filename': 'js/loosethreds.copy.js',
     }
 }
 
