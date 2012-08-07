@@ -17,7 +17,7 @@
         input.focus().select()
 
       base.delegate 'input.image-url', 'blur', (event) ->
-        jnput = $(this)
+        input = $(this)
         button = $('<button class="btn copy">Copy</button>')
         
         button.attr('data-url', input.data('url'))
