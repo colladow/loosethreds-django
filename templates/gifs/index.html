@@ -9,7 +9,6 @@
 {% block body %}
 <article class="user">
 <div class="row">
-    {% for i in some_range %}
     {% for pk, user in users.iteritems %}
     <div class="span4">
       <h2><a href="/users/{{ pk }}">{{ user.username }}</a></h2>
@@ -18,7 +17,6 @@
         <img src="{% static user.image.image.url %}">
       </a>
     </div>
-    {% endfor %}
     {% endfor %}
   </div>
 </article>

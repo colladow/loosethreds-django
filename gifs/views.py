@@ -22,7 +22,6 @@ def index(request):
         user_data[user.pk] = {
             'username': user.username,
             'image': user.gifs.latest_gif(),
-            'range': range(0, 10),
         }
 
     return render_to_response('gifs/index.html',
