@@ -15,6 +15,10 @@ framework.
 """
 import os
 
+# activate virtualenv
+activate_this = os.path.expanduser("~/dev/envs/loosethreds/bin/activate_this.py")
+execfile(activate_this, dict(__file__=activate_this))
+
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "loosethreds.settings")
 
 # This application object is used by any WSGI server configured to use this

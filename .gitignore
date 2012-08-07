@@ -7,3 +7,4 @@ static/*
 *.swp
 *.pyc
 loosethreds/settings/dev.py
+loosethreds/settings/*.json

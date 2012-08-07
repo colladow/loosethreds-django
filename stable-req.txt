@@ -3,5 +3,6 @@ PIL==1.1.7
 django-pipeline==1.2.12
 logilab-astng==0.24.0
 logilab-common==0.58.1
+psycopg2==2.4.5
 pylint==0.25.2
 wsgiref==0.1.2
